@@ -455,12 +455,20 @@
 								case 'v1':
 								case 'v2':
 									var d = decode(search[1]);
+									var m = {};
 									for (var i in urls) {
 										var r = mod(d, D6);
 										d = d.subtract(r).divide(D6);
 										var v = search[0].substring(1);
-										localStorage.setItem('0' === v ? i : (v + ':' + i), parseInt(r.getValue()) - 1);
+										v = '0' === v ? i : (v + ':' + i);
+										if (null !== localStorage.getItem(v)) {
+											m = {};
+											break;
+										}
+										m[v] = parseInt(r.getValue()) - 1;
 									}
+									for (var i in m)
+										localStorage.setItem(i, m[i]);
 									break;
 							}
 						} catch (e) {}
