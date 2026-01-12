@@ -120,6 +120,7 @@
 					}
 				};
 				const image2base64 = function(files) {
+					document.getElementById("ad").checked = false;
 					srcList.length = 0;
 					let count = files.length;
 					output.value = "Loading " + count + " images";
@@ -132,10 +133,8 @@
 							});
 							reader.onload = (e) => {
 								srcList[reader.index].src = e.target.result;
-								if (0 == -- count) {
+								if (0 == -- count)
 									print();
-									document.getElementById("ad").checked = false;
-								}
 							};
 							reader.readAsDataURL(file);
 						} else {

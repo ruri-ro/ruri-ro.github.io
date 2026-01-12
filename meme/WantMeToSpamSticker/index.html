@@ -58,6 +58,7 @@
 					language = 'en';
 				document.title = text[language].title;
 				const displayImage = files => {
+					document.getElementById("ad").checked = false;
 					try {
 						for (const file of files)
 							if (file.type.startsWith("image/")) {
@@ -79,7 +80,6 @@
 											label.appendChild(pre);
 											console.log(e);
 										}
-										document.getElementById("ad").checked = false;
 									}, 1000);
 								};
 								reader.readAsDataURL(file);

@@ -52,6 +52,7 @@
 				const srcList = [];
 				let index = -1;
 				const readImage = function(files) {
+					document.getElementById("ad").checked = false;
 					srcList.length = 0;
 					index = -1;
 					document.title = title;
@@ -74,7 +75,6 @@
 						index = 0;
 						document.title = srcList[index].name + " (" + (index + 1) + "/" + srcList.length + ")";
 						document.body.style.backgroundImage = "none";
-						document.getElementById("ad").checked = false;
 					}
 				};
 				const navigate = function(code) {
