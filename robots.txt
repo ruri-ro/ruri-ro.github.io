@@ -1,1 +1,3 @@
+User-agent: *
+Allow: /
 Sitemap: https://ruri-ro.github.io/sitemap.xml
